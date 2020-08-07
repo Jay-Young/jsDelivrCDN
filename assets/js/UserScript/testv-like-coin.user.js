@@ -15,15 +15,8 @@
 
 (function() {
     if (document.getElementsByClassName('username')[0].innerText == 'TESTV官方频道') {
-        var T = 30000; // 如果我为这个视频停留30秒，那么我将投币点赞
+        var T = 10000; // 考虑到性能和网络因素，10秒后投币点赞
         setTimeout(function(){
-            var likeBtn = document.getElementsByClassName("like")[0];
-            if (likeBtn.className == "like") {
-                likeBtn.click();
-                Toast.info("当前视频没有字幕.","下载字幕",3e3);
-                console.log("已自动为up主点赞");
-            }
-
             // 获取今日投币情况
             var httpRequest = new XMLHttpRequest();
             httpRequest.open('GET', 'https://www.bilibili.com/plus/account/exp.php', true);
